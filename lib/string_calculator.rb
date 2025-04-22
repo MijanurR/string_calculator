@@ -1,5 +1,5 @@
 class StringCalculator
   def add(input)
-    # not implemented yet
+     return 0 if input.strip.empty? #handling empty string 
   end
 end
