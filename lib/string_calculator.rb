@@ -9,6 +9,9 @@ class StringCalculator
       input = parts[1]
     end
 
-    input.split(delimiter).map(&:to_i).sum
+    values = input.split(delimiter).map(&:to_i)
+    negatives = values.select { |n| n < 0 }
+    raise "Negatives not allowed: #{negatives.join(', ')}" if negatives.any?
+    values.sum
   end
 end
